@@ -1,0 +1,380 @@
+{
+    "name": "SGS-02. Clinic Visit (Anesthesia)",
+    "description": "Clinic Visit (Anesthesia) Form",
+    "version": "1.0",
+    "published": true,
+    "retired": false,
+    "encounter": "Clinic Visit Anesthesia",
+    "pages": [
+      {
+        "label": "Clinic Visit Anesthesia",
+        "sections": [
+          {
+            "label": "Patient Vitals",
+            "isExpanded": "true",
+            "questions": [
+                {
+                    "label": "Temperature (F)",
+                    "type": "obs",
+                    "required": false,
+                    "id": "temperature",
+                    "questionOptions": {
+                      "rendering": "number",
+                      "concept": "c37bd733-3f10-11e4-adec-0800271c1b75",
+                      "conceptMappings": [],
+                      "answers": []
+                    },
+                    "validators": []
+              },  
+              {
+                "label": "Heart Rate",
+                "type": "obs",
+                "required": false,
+                "id": "heartRate",
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "c248c2f3-e927-429e-b2c0-adc104b956a9",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Systolic Blood Pressure (mm Hg)",
+                "type": "obs",
+                "required": false,
+                "id": "systolicBloodPressure",
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "26fede17-3317-9054-70c1-ac41dea7556b",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Diastolic Blood Pressure (mm Hg)",
+                "type": "obs",
+                "required": false,
+                "id": "diastolicBloodPressure",
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "8ee724a5-250c-0955-9336-a42bd3041b6a",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Respiratory Rate",
+                "type": "obs",
+                "required": false,
+                "id": "respiratoryRate",
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "6a2c1bf8-27d4-42b9-a1aa-aa9860db8609",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Weight (Kg)",
+                "type": "obs",
+                "required": false,
+                "id": "weight",
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Height (Cm)",
+                "type": "obs",
+                "required": false,
+                "id": "height",
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "5090AAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "SPO2 (%)",
+                "type": "obs",
+                "required": false,
+                "id": "SPO2",
+                "questionOptions": {
+                  "rendering": "number",
+                  "concept": "c3838414-3f10-11e4-adec-0800271c1b75",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              }
+            ]
+          },
+          {
+            "label": "Medical /Surgical /Social History",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Past medical history",
+                "type": "obs",
+                "required": false,
+                "id": "pastMedicalHistory",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "30c10a0b-6099-1e09-4b4b-9ac62bf13902",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Past Surgical History",
+                "type": "obs",
+                "required": false,
+                "id": "pastSurgicalHistory",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "efb230b2-070e-9340-042e-cee3d5ca401a",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Social history",
+                "type": "obs",
+                "required": false,
+                "id": "socialHistory",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "f9f666dd-8de6-09cf-5b01-d34493002e69",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Allergies",
+                "type": "obs",
+                "required": false,
+                "id": "allergies",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "a2a312b5-a588-97de-3414-734d50367791",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Time traveled for care",
+                "type": "obs",
+                "required": false,
+                "id": "timeTraveledForCare",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "8eac5b9b-8aa6-44dd-9bb9-b754f436e5b4",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Physical Exam",
+                "type": "obs",
+                "required": false,
+                "id": "physicalExam",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "4ca3e055-2fca-8659-31cd-65a2c79f263e",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              }
+            ]
+          },
+          {
+            "label": "Anesthesia evaluation",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "ASA Score",
+                "type": "obs",
+                "required": false,
+                "id": "ASAScore",
+                "questionOptions": {
+                  "rendering": "select",
+                  "concept": "9F9DDA23-028E-9D1F-2D31-3E0D8A4A00FE",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "8fc57db0-9de5-4db2-956a-b25e5b83c2c2",
+                      "label": "Severity classification NYHA - Class IV"
+                    },
+                    {
+                      "concept": "9d5ec533-36f1-4f64-acaf-5d86726dba26",
+                      "label": "Severity classification NYHA - Class III"
+                    },
+                    {
+                      "concept": "127d6ea2-4d23-4100-ac8b-d8c3cd345d55",
+                      "label": "Severity classification NYHA - Class II"
+                    },
+                    {
+                      "concept": "1973a47e-6750-410c-b748-8900d4e8ad2f",
+                      "label": "Severity classification NYHA - Class I"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
+                "label": "Anesthesia Evaluation Cleared for Surgery",
+                "type": "obs",
+                "required": false,
+                "id": "anesthesiaEvaluationClearedForSurgery",
+                "questionOptions": {
+                  "rendering": "select",
+                  "concept": "a8430f9e-224c-45a6-8d45-cd89372bcf6b",
+                  "conceptMappings": [],
+                  "answers": [
+                    {
+                      "concept": "fb1216ec-412f-11eb-9591-6388fef9721b",
+                      "label": "Yes"
+                    },
+                    {
+                      "concept": "0fac2336-4130-11eb-951b-6ffc17310f7c",
+                      "label": "No"
+                    }
+                  ]
+                },
+                "validators": []
+              },
+              {
+                "label": "Anesthesia plan",
+                "type": "obs",
+                "required": false,
+                "id": "anesthesiaPlan",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "c2ceee7f-a36c-4cc3-8d5f-5e61fa722a7c",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Anesthesia history or complications from previous anesthetics in patients or family",
+                "type": "obs",
+                "required": false,
+                "id": "anesthesiaHistoryFromPreviousAnesthetics",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "31ce0a24-cb11-448e-adc8-59e828f8a412",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Airway Exam/Mallampati classification",
+                "type": "obs",
+                "required": false,
+                "id": "airwayExamMallampatiClassification",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "087a1478-74cc-4210-9442-97e3af158149",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Pulmonary exam",
+                "type": "obs",
+                "required": false,
+                "id": "pulmonaryExam",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "6dc729cb-bd08-4e78-a6a6-ef43c1a33d31",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Cardiovascular exam",
+                "type": "obs",
+                "required": false,
+                "id": "cardiovascularExam",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "7e4b6f6c-09a4-45f7-9038-71d1c0e326db",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "Neurological exam",
+                "type": "obs",
+                "required": false,
+                "id": "neurologicalExam",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "82608f9e-25ac-4b84-b801-cfaf6a03bdd6",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              },
+              {
+                "label": "NPO instructions",
+                "type": "obs",
+                "required": false,
+                "id": "NPOInstructions",
+                "questionOptions": {
+                  "rendering": "text",
+                  "concept": "aa8395d0-b07d-4a7d-9f5e-8ef7938362c9",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              }
+            ]
+          },
+          {
+            "label": "Upload Anesthesia Form",
+            "isExpanded": "true",
+            "questions": [
+              {
+                "label": "Upload anesthesia form here",
+                "type": "obs",
+                "required": false,
+                "id": "uploadAnesthesiaFormHere",
+                "questionOptions": {
+                  "rendering": "file",
+                  "concept": "519e0d65-0fd3-47d6-8faa-b280a04d9b33",
+                  "conceptMappings": [],
+                  "answers": []
+                },
+                "validators": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "processor": "EncounterFormProcessor",
+    "referencedForms": [],
+    "uuid": "173f412f-692d-47d0-901f-620802bd81f2"
+  }

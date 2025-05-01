@@ -175,7 +175,7 @@ services:
             - "80:80"
 
     frontend:
-        image: openmrs/openmrs-reference-application-3-frontend:3.3.1
+        image: itechuw/sgs-frontend:latest
         container_name: openmrs-frontend
         restart: "unless-stopped"
         environment:
@@ -207,7 +207,7 @@ services:
             test: ["CMD", "curl", "-f", "http://localhost:8080/openmrs"]
             timeout: 5s
         volumes:
-            - ./volumes/openmrs/distro/configuration/globalproperties/openelis-openmrs.xml:/openmrs/distribution/openmrs_config/globalproperties/openelis-openmrs.xml
+            - ./volumes/openmrs/distro/configuration/:/openmrs/distribution/openmrs_config/
             - ./volumes/openmrs/modules/labonfhir-1.5.1-SNAPSHOT.omod:/openmrs/distribution/openmrs_modules/labonfhir-1.5.1-SNAPSHOT.omod
             - ./volumes/openmrs/modules/event-2.11.0-SNAPSHOT.omod:/openmrs/distribution/openmrs_modules/event-2.11.0-SNAPSHOT.omod
             - ./volumes/openmrs/modules/outcomes-1.0.0.omod:/openmrs/distribution/openmrs_modules/outcomes-1.0.0.omod
@@ -340,7 +340,28 @@ services:
         ports:
             - '8095:8080'         
      
-                
+
+    outcomes:
+        image: itechuw/sgs-outcomes:latest
+        restart: "unless-stopped"
+        container_name: sgs-outcomes
+        depends_on:
+            - backend 
+            - proxy
+        env_file:
+            - .env
+        ports:
+            - "3000:80"  
+
+    outcomes_proxy:
+        image: itechuw/sgs-proxy:latest
+        restart: "unless-stopped"
+        container_name: sgs-proxy
+        ports:
+            - "7000:5000" 
+        env_file:
+            - .env      
+
 secrets:
   datasource.password:
     file: ./volumes/openelis/properties/datasource.password  
