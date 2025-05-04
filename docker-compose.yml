@@ -131,7 +131,7 @@ services:
         depends_on:
             - oe.openelis.org
 
-    proxy:
+    nginx_proxy:
         image: nginx:1.15-alpine
         container_name: openelisglobal-proxy
         ports:
@@ -165,7 +165,7 @@ services:
 ##### OpenMRS3   
 
     gateway:
-        image: openmrs/openmrs-reference-application-3-gateway:3.3.1
+        image: openmrs/openmrs-reference-application-3-gateway:${TAG:-qa}
         container_name: openmrs-proxy
         restart: "unless-stopped"
         depends_on:
@@ -190,7 +190,7 @@ services:
             - backend
 
     backend:
-        image: openmrs/openmrs-reference-application-3-backend:3.3.1
+        image: openmrs/openmrs-reference-application-3-backend:${TAG:-qa}
         container_name: openmrs-backend
         restart: "unless-stopped"
         depends_on:
@@ -213,7 +213,9 @@ services:
             - ./volumes/openmrs/modules/outcomes-1.0.0.omod:/openmrs/distribution/openmrs_modules/outcomes-1.0.0.omod
             - openmrs-data:/openmrs/data
         ports:
-            - "8282:8080"            
+            - "8282:8080" 
+        env_file:
+            - .env           
 
     # Maria DB
     db:
@@ -347,7 +349,7 @@ services:
         container_name: sgs-outcomes
         depends_on:
             - backend 
-            - proxy
+            - outcomes_proxy
         env_file:
             - .env
         ports:
