@@ -176,6 +176,7 @@ services:
 
     frontend:
         image: itechuw/sgs-frontend:latest
+        #image: openmrs/openmrs-reference-application-3-frontend:3.3.1
         container_name: openmrs-frontend
         restart: "unless-stopped"
         environment:
@@ -188,6 +189,8 @@ services:
             timeout: 5s
         depends_on:
             - backend
+        volumes:
+            - ./volumes/openmrs/frontend/config-core_demo.json:/usr/share/nginx/html/config-core_demo.json
 
     backend:
         image: openmrs/openmrs-reference-application-3-backend:${TAG:-qa}
@@ -207,7 +210,32 @@ services:
             test: ["CMD", "curl", "-f", "http://localhost:8080/openmrs"]
             timeout: 5s
         volumes:
-            - ./volumes/openmrs/distro/configuration/:/openmrs/distribution/openmrs_config/
+                       
+            # addresshierarchy files
+            - ./volumes/openmrs/distro/configuration/addresshierarchy/addressConfiguration.xml:/openmrs/distribution/openmrs_config/addresshierarchy/addressConfiguration.xml
+            - ./volumes/openmrs/distro/configuration/addresshierarchy/addresshierarchy.csv:/openmrs/distribution/openmrs_config/addresshierarchy/addresshierarchy.csv
+
+            # ampathforms files
+            - ./volumes/openmrs/distro/configuration/ampathforms/intra_op_staff_form.json:/openmrs/distribution/openmrs_config/ampathforms/new_intra_op_staff_form.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/clinic_visit_anesthesia.json:/openmrs/distribution/openmrs_config/ampathforms/new_clinic_visit_anesthesia.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/intra_op_anesthesia_form.json:/openmrs/distribution/openmrs_config/ampathforms/new_intra_op_anesthesia_form.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/outside_medical_records.json:/openmrs/distribution/openmrs_config/ampathforms/new_outside_medical_records.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/patient_reported_outcome_measures.json:/openmrs/distribution/openmrs_config/ampathforms/new_patient_reported_outcome_measures.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/physical_therapy.json:/openmrs/distribution/openmrs_config/ampathforms/new_physical_therapy.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/post_op_anaesthesia.json:/openmrs/distribution/openmrs_config/ampathforms/new_post_op_anaesthesia.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/post_op_surgeon.json:/openmrs/distribution/openmrs_config/ampathforms/new_post_op_surgeon.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/pre_op_anesthesia.json:/openmrs/distribution/openmrs_config/ampathforms/new_pre_op_anesthesia.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/pre_op_surgeon.json:/openmrs/distribution/openmrs_config/ampathforms/new_pre_op_surgeon.json
+            - ./volumes/openmrs/distro/configuration/ampathforms/surgical_booking_form.json:/openmrs/distribution/openmrs_config/ampathforms/new_surgical_booking_form.json
+
+                        # concepts
+            - ./volumes/openmrs/distro/configuration/concepts/concepts.csv:/openmrs/distribution/openmrs_config/concepts/new_concepts.csv
+            # encountertypes
+            - ./volumes/openmrs/distro/configuration/encountertypes/encountertypes.csv:/openmrs/distribution/openmrs_config/encountertypes/new_encountertypes.csv
+            - ./volumes/openmrs/distro/configuration/globalproperties/openelis-openmrs.xml:/openmrs/distribution/openmrs_config/globalproperties/new_openelis-openmrs.xml
+            # visittypes
+            - ./volumes/openmrs/distro/configuration/visittypes/visittypes.csv:/openmrs/distribution/openmrs_config/visittypes/new_visittypes.csv
+
             - ./volumes/openmrs/modules/labonfhir-1.5.1-SNAPSHOT.omod:/openmrs/distribution/openmrs_modules/labonfhir-1.5.1-SNAPSHOT.omod
             - ./volumes/openmrs/modules/event-2.11.0-SNAPSHOT.omod:/openmrs/distribution/openmrs_modules/event-2.11.0-SNAPSHOT.omod
             - ./volumes/openmrs/modules/outcomes-1.0.0.omod:/openmrs/distribution/openmrs_modules/outcomes-1.0.0.omod
