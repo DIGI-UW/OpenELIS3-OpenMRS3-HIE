@@ -21,6 +21,16 @@ Acces the services at
 
 1. Ensure Add the Right Test Catalogue ie tests with `Loinc Codes`
 
+   Some tests that come fully configured out of the box in this setup and can be used for testing the EMR-LIS exchange are:
+
+   | Test | Loinc Code |
+   |------|------------|
+   | White Blood Cells Count (WBC) | 53225-9 |
+   | Red Blood Cells Count (RBC) | 23859-2 |
+   | Platelets | 26515-7 |
+
+   These are defined in [configs/openelis/configuration/tests/example-tests.csv](configs/openelis/configuration/tests/example-tests.csv).
+
 see [more](https://digi-uw.github.io/healthinformationexchange/lis-workflows/lis-workflows.html#tutorial-lab-order-communication-between-openmrs-and-openelis) for the EMR-LIS communication
 
 
