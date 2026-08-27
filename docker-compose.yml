@@ -43,7 +43,7 @@ services:
 
     db.openelis.org:
         container_name: openelisglobal-database 
-        image: itechuw/openelis-global-2-database:3.2.1.1
+        image: itechuw/openelis-global-2-database:3.2.2.0
         platform: linux/amd64
         ports:
             - "15432:5432"
@@ -55,7 +55,7 @@ services:
             - DB_SUPERUSER_PASSWORD=${ADMIN_PASSWORD}       
         volumes:
               # preserves the database between containers
-            - oe-db-data:/var/lib/postgresql/data                
+            - ./configs/openelis/database/data:/var/lib/postgresql/data                
         logging: *local-logging    
         healthcheck:
             test: [ "CMD", "pg_isready", "-q", "-d", "clinlims", "-U", "clinlims" ]
@@ -65,7 +65,7 @@ services:
             
     oe.openelis.org:
         container_name: openelisglobal-webapp 
-        image: itechuw/openelis-global-2:3.2.1.1
+        image: itechuw/openelis-global-2:3.2.2.0
         platform: linux/amd64  
         depends_on:
             - db.openelis.org
@@ -91,7 +91,7 @@ services:
             - ./configs/openelis/plugins/:/var/lib/openelis-global/plugins
             - ./configs/openelis/logs/oeLogs:/var/lib/openelis-global/logs
             - ./configs/openelis/logs/tomcatLogs/:/usr/local/tomcat/logs
-            - ./configs/openelis/properties/SystemConfiguration.properties:/var/lib/openelis-global/properties/SystemConfiguration.properties
+            - ./configs/openelis/properties/:/var/lib/openelis-global/properties/
             - ./configs/openelis/analyzer/analyzer-test-map.csv:/var/lib/openelis-global/analyzer/analyzer-test-map.csv
             - ./configs/openelis/odoo/odoo-test-product-mapping.csv:/var/lib/openelis-global/odoo/odoo-test-product-mapping.csv
             - ./configs/openelis/programs/:/var/lib/openelis-global/programs
@@ -103,7 +103,7 @@ services:
             
     fhir.openelis.org:
         container_name: external-fhir-api
-        image: itechuw/openelis-global-2-fhir:3.2.1.1
+        image: itechuw/openelis-global-2-fhir:3.2.2.0
         platform: linux/amd64
         ports:
             - "8081:8080"
@@ -134,7 +134,7 @@ services:
             -  key_trust-store-volume:/etc/openelis-global  
         
     frontend.openelis.org:
-        image: itechuw/openelis-global-2-frontend:3.2.1.1
+        image: itechuw/openelis-global-2-frontend:3.2.2.0
         container_name: openelisglobal-front-end
         platform: linux/amd64
         environment:
@@ -145,7 +145,7 @@ services:
             - oe.openelis.org
 
     proxy:
-        image: itechuw/openelis-global-2-proxy:3.2.1.1
+        image: itechuw/openelis-global-2-proxy:3.2.2.0
         platform: linux/amd64
         container_name: openelisglobal-proxy
         ports:
