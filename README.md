@@ -29,7 +29,7 @@ Acces the services at
    | Red Blood Cells Count (RBC) | 23859-2 |
    | Platelets | 26515-7 |
 
-   These are defined in [configs/openelis/configuration/tests/example-tests.csv(./configs/openelis/configuration/tests/example-tests.csv)
+   These are defined in [configs/openelis/configuration/backend/tests/example-tests.csv](./configs/openelis/configuration/backend/tests/example-tests.csv)
 
 see [more](https://digi-uw.github.io/healthinformationexchange/lis-workflows/lis-workflows.html#tutorial-lab-order-communication-between-openmrs-and-openelis) for the EMR-LIS communication
 
