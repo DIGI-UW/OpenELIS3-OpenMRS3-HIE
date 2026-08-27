@@ -16,8 +16,17 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
-configs/openelis/logs/oeLogs/*
-configs/openelis/logs/tomcatLogs/*
+
 .DS_Store
 configs/fhirpipes/dwh/*
 configs/openmrs/ssl/*
+# local log folders
+configs/openelis/logs/
+configs/openelis/database/data/
+configs/openelis/logs/oeLogs/*
+configs/openelis/logs/tomcatLogs/*
+configs/openelis/database/data/*
+**/*checksum*.properties
+**/*checksums*.properties
+configs/openelis/properties/TotalSystemConfiguration.properties
+configs/openelis/properties/ChangedSystemConfiguration.properties
