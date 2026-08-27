@@ -1,2 +1,5 @@
-category,dictEntry,localAbbreviation,isActive,sortOrder,loincCode
-
+category,dictEntry,localAbbreviation,isActive,sortOrder,loincCode,localization:en,localization:fr,localization:es,localization:id
+HL,Negatif,ISANTE-001-Neg,Y,1,0000-016,Negative ,Negative ,Negative ,Negative 
+HL,Positif,ISANTE-002-POS,Y,2,0000-017,Positive ,Positive ,Positive ,Positive 
+V,INDETERMINATE,ISANTE-003-IND,Y,3,0000-018,Indeterminate ,Indeterminate ,Indeterminate ,Indeterminate 
+Test Result,POOR SAMPLE QUALITY,ISANTE-004-POO,Y,4,0000-019,POOR SAMPLE QUALITY,POOR SAMPLE QUALITY,POOR SAMPLE QUALITY,POOR SAMPLE QUALITY
